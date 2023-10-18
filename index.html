@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <title>クイズ</title>
 </head>
@@ -18,9 +19,11 @@
     </ul>
 
     <div class="btn-box">
-        <button type="button" id="answer1">回答1</button>
-        <button type="button" id="answer2">回答2</button>
-        <button type="button" id="answer3">回答3</button>
+        <button type="button" id="answer1" onclick="answerCheck(1)">回答1</button>
+        <button type="button" id="answer2"
+        onclick="answerCheck(2)">回答2</button>
+        <button type="button" id="answer3"
+        onclick="answerCheck(3)">回答3</button>
     </div>
 
     <script src="js/main.js"></script>
