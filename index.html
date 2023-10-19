@@ -9,23 +9,60 @@
     <title>クイズ</title>
 </head>
 <body>
-    <h1>クイズ</h1>
-    <h2 id="question">ここに問題表示</h2>
-
-    <ul>
-        <li id="ans1">選択肢1</li>
-        <li id="ans2">選択肢2</li>
-        <li id="ans3">選択肢3</li>
-    </ul>
-
-    <div class="btn-box">
-        <button type="button" id="answer1" onclick="answerCheck(1)">回答1</button>
-        <button type="button" id="answer2"
-        onclick="answerCheck(2)">回答2</button>
-        <button type="button" id="answer3"
-        onclick="answerCheck(3)">回答3</button>
+    <!-- スタート画面 -->
+    <div id="startPage">
+        <div class="wrapper">
+            <h1>〇〇〇〇クイズ</h1>
+            <div class="button_box">
+            <button id="startButton" class="button_style">START</button>
+            </div>
+        </div>
     </div>
 
+    <!-- 問題画面 -->
+    <div id="questionPage" class="hide">
+        <div class="wrapper">
+            <h2 id="question">ここに問題表示</h2> 
+            <ul class="mt30">
+                <li id="ans1">選択肢1</li>
+                <li id="ans2">選択肢2</li>
+                <li id="ans3">選択肢3</li>
+            </ul>
+            <div class="btn-box mt30">
+                <button type="button" id="answer1" class="button_style" onclick="answerCheck(1)">回答1</button>
+                <button type="button" id="answer2" class="button_style" onclick="answerCheck(2)">回答2</button>
+                <button type="button" id="answer3" class="button_style" onclick="answerCheck(3)">回答3</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 回答画面正解 -->
+    <div id="answerCorrectModal" class="hide">
+        <div class="wrapper">
+            <h2>正解です</h2>
+            <p>正解は〇〇でした。</p>
+            <button id="CorrectNextButton" class="button_style mt30">次へ</button>
+        </div>
+    </div>
+
+    <!-- 回答画面不正解 -->
+    <div id="answerIncorrectModal" class="hide">
+        <div class="wrapper">
+            <h2>不正解です</h2>
+            <p>正解は〇〇でした。</p>
+            <button id="incrrectNextButton" class="button_style mt30">次へ</button>
+        </div>
+    </div>
+
+    <!-- 結果画面 -->
+    <div id="resultPage" class="hide">
+        <div class="wrapper">
+            <h2>正解数を表示</h2>
+            <p>あなたのタイプを表示</p>
+            <button id="backButton" class="button_style mt30">戻る</button>
+        </div>
+    </div>
+    </div>
     <script src="js/main.js"></script>
 </body>
 </html>

@@ -24,7 +24,12 @@ let question = [
     ]
 ];
 
-// console.log(question[0][1]);
+// スタート画面
+const startPage = document.getElementById('startPage');
+const startButton = document.getElementById('startButton');
+
+// 問題画面
+const questionPage = document.getElementById('questionPage');
 
 let quiz = document.getElementById('question');
 let ans1 = document.getElementById('ans1');
@@ -34,6 +39,13 @@ let ans3 = document.getElementById('ans3');
 let correct = 0;
 let quizCnt = 0;
 
+// 回答画面
+const answerCorrectModal = document.getElementById('answerCorrectModal');
+const answerIncorrectModal = document.getElementById('answerIncorrectModal');
+const CorrectNextButton = document.getElementById('CorrectNextButton');
+const incorrectNextButton = document.getElementById('incorrectNextButton');
+
+// クイズの処理_初期化
 function quizSet(){
     quiz.textContent = question[quizCnt][0];
     ans1.textContent = question[quizCnt][1];

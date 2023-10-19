@@ -1,10 +1,31 @@
 h1 {
   font-size: 35px;
   font-weight: bold;
-  background-color: rgb(214, 255, 255);
-  color: rgb(121, 140, 248);
+  color: #000;
   text-align: center;
   margin-bottom: 20px;
+}
+
+.wrapper {
+  margin: 50px auto;
+  height: 500px;
+  width: 50%;
+  text-align: center;
+  padding: 10%;
+  border: solid 2px #e4e4e4;
+  border-radius: 20px;
+}
+
+.button_style {
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.button_style:hover {
+  opacity: 0.6;
 }
 
 h2 {
@@ -13,22 +34,18 @@ h2 {
   font-weight: normal;
 }
 
-ul {
-  width: 300px;
-  margin: 20px auto;
+P {
+  margin-top: 30px;
 }
 
-.btn-box {
-  text-align: center;
+.mt30 {
+  margin-top: 30px;
 }
-.btn-box button {
-  background-color: #442aad;
-  border-radius: 5px;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
+
+.hide {
+  display: none;
 }
-.btn-box button:hover {
-  opacity: 0.7;
-}
+
+.display {
+  display: block;
+}}
