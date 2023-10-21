@@ -50,6 +50,40 @@ P{
 .display{
   display: block;
 }
-  
 
+.fadeIn {
+  animation: fadein 0.1s;
+}
+
+@keyframes fadein {
+from { 
+  opacity: 0;
+  animation-timing-function: ease-in-out;
+}
+to   { 
+  opacity: 1;
+  }
+}
   
+.modal{
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+
+.modalWrapper{
+  margin: 150px auto;
+  height: 400px;
+  width: 40%;
+  text-align: center;
+  padding: 10%;
+  background-color: #fff;
+  border: solid 2px #e4e4e4;
+  border-radius: 20px;
+}
