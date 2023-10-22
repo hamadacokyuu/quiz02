@@ -42,9 +42,6 @@ startButton.addEventListener('click' , function(){
 const questionPage = document.getElementById('questionPage');
 
 let quiz = document.getElementById('question');
-let ans1 = document.getElementById('ans1');
-let ans2 = document.getElementById('ans2');
-let ans3 = document.getElementById('ans3');
 
 let correct = 0;
 let quizCnt = 0;
@@ -66,9 +63,9 @@ let backButton  =  document.getElementById('backButton');
 // クイズの処理_初期化
 function quizSet(){
     quiz.textContent = question[quizCnt][0];
-    ans1.textContent = question[quizCnt][1];
-    ans2.textContent = question[quizCnt][2];
-    ans3.textContent = question[quizCnt][3];
+    answer1.textContent = question[quizCnt][1];
+    answer2.textContent = question[quizCnt][2];
+    answer3.textContent = question[quizCnt][3];
 };
 
 quizSet();
@@ -117,6 +114,8 @@ function answerCheck(ans){
 
 
 // 課題
-// 重複しているところをまとめる。foreachを使う。
-// 結果画面のJSを書く。
+// 重複しているところをまとめる。foreachを使う。⇨うまくいかない
+// 結果画面のJSを書く。→OK
 // correctResultの書き方工夫する。
+// 最後のネクストは結果を見るにしたい。
+// 選択肢はボタンの中に含める →OK
