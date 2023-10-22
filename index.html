@@ -6,13 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
     <title>クイズ</title>
 </head>
 <body>
     <!-- スタート画面 -->
     <div id="startPage">
-        <div class="wrapper">
-            <h1>〇〇〇〇クイズ</h1>
+        <div class="wrapper dot-btn">
+            <h1 class="typewriter">〇〇〇〇クイズ</h1>
             <div class="button_box">
             <button id="startButton" class="button_style">START</button>
             </div>
@@ -22,7 +25,7 @@
     <!-- 問題画面 -->
     <div id="questionPage" class="hide fadeIn-1">
         <div class="wrapper">
-            <h2 id="question">ここに問題表示</h2> 
+            <h2 id="question" class="typewriter">ここに問題表示</h2> 
             <!-- <ul class="mt30">
                 <li id="ans1">選択肢1</li>
                 <li id="ans2">選択肢2</li>
@@ -37,22 +40,14 @@
     </div>
     
     <!-- 回答画面正解 -->
-    <div id="answerCorrectModal" class="hide modal fadeIn-2">
+    <div id="answerModal" class="hide modal fadeIn-2">
         <div class="modalWrapper">
-            <h2>正解です</h2>
-            <button id="CorrectNextButton" class="button_style mt30">次へ</button>
+            <h2 id="result">正誤を表示</h2>
+            <p id="correctResult">正解の回答を表示</p>
+            <button id="nextButton" class="button_style mt30">次へ</button>
         </div>
     </div>
  
-    <!-- 回答画面不正解 -->
-    <div id="answerIncorrectModal" class="hide modal fadeIn-1">
-        <div class="modalWrapper">
-            <h2>不正解です</h2>
-            <p id="correctResult">正解の回答を表示</p>
-            <button id="incorrectNextButton" class="button_style mt30">次へ</button>
-        </div>
-    </div>
-
     <!-- 結果画面 -->
     <div id="resultPage" class="hide fadeIn-1">
         <div class="wrapper">

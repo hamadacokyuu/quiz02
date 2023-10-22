@@ -2,7 +2,7 @@
 
 let question = [
     [
-        "山形県の県庁所在地はどこ",
+        "山形県の県庁所在地はどこ?",
         "1.天童市",
         "2.東根市",
         "3.山形市",
@@ -46,14 +46,11 @@ let quiz = document.getElementById('question');
 let correct = 0;
 let quizCnt = 0;
 
-// 回答画面-正解
-let answerCorrectModal = document.getElementById('answerCorrectModal');
-let CorrectNextButton = document.getElementById('CorrectNextButton');
-
-// 回答画面-不正解
-let answerIncorrectModal = document.getElementById('answerIncorrectModal');
+// 回答画面
+let answerModal = document.getElementById('answerModal');
+let result = document.getElementById('result');
 let correctResult  = document.getElementById('correctResult');
-let incorrectNextButton = document.getElementById('incorrectNextButton');
+let nextButton = document.getElementById('nextButton');
 
 // 結果画面
 const resultPage =  document.getElementById('resultPage');
@@ -71,51 +68,61 @@ function quizSet(){
 quizSet();
 
 function answerCheck(ans){
+    
+    // 正誤判定
     if(ans == question[quizCnt][4]){
-        answerCorrectModal.style.display = 'block';
+        answerModal.style.display = 'block';
+        result.textContent = "正解です";
         correct++;
     } else {
-        answerIncorrectModal.style.display = 'block';
-        correctResult.textContent = `正解は${question[quizCnt][5]}です`;
+        result.textContent = "不正解です";
+        answerModal.style.display = 'block';
     }
 
-    CorrectNextButton.addEventListener('click' , () =>{
-        answerCorrectModal.style.display = 'none';       
-    });
-
-    incorrectNextButton.addEventListener('click' , () =>{
-        answerIncorrectModal.style.display = 'none';
-    });
-
+    // 正解の表示
+    correctResult.textContent = `正解は${question[quizCnt][5]}です`;
+    
     quizCnt++;
 
-    // 結果画面
+    // 最後の問題（配列の長さと同じ）で文言を変える
     if(quizCnt == question.length){
-        questionPage.style.display = 'none'; 
-        resultPage.style.display = 'block'; 
-        resultCorrectCount.textContent = `正解数は${correct}です。`
-            if(correct == 3){
-                yourType.textContent = "あなたは秋田は博士です！"
-            } else if (correct == 2){
-                yourType.textContent = "もう少しです！"
-            } else {
-                yourType.textContent = "がんばりましょう！"
-            }
-
-        backButton.addEventListener('click', () => {
-            document.location.reload()
-        });
-
-    }else{
-        quizSet();
+        nextButton.textContent = "結果を見る";
     }
+    
+    // モーダルを閉じる
+    nextButton.addEventListener('click' , () =>{
+        answerModal.style.display = 'none';
+
+        // 最後の問題が来たら結果画面を表示
+        if(quizCnt == question.length){
+            questionPage.style.display = 'none'; 
+            resultPage.style.display = 'block'; 
+            resultCorrectCount.textContent = `正解数は${correct}です。`
+                if(correct == 3){
+                    yourType.textContent = "あなたは秋田は博士です！"
+                } else if (correct == 2){
+                    yourType.textContent = "もう少しです！"
+                } else {
+                    yourType.textContent = "がんばりましょう！"
+                }
+            
+            // 戻るボタンでリロードさせる
+            backButton.addEventListener('click', () => {
+                document.location.reload()
+            });
+        
+        // 最後の問題でなければ、新しくクイズをセットする。
+        }else{
+            quizSet();
+        }
+    });
 };
 
 
 
 // 課題
-// 重複しているところをまとめる。foreachを使う。⇨うまくいかない
+// 重複しているところをまとめる。→OK
 // 結果画面のJSを書く。→OK
 // correctResultの書き方工夫する。
-// 最後のネクストは結果を見るにしたい。
+// 最後のネクストは結果を見るにしたい。→OK
 // 選択肢はボタンの中に含める →OK
