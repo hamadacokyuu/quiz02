@@ -79,29 +79,42 @@ function answerCheck(ans){
         correct++;
     } else {
         answerIncorrectModal.style.display = 'block';
-        correctResult.textContent = `正解数は${question[quizCnt][5]}でした！`;
+        correctResult.textContent = `正解は${question[quizCnt][5]}です`;
     }
 
-    CorrectNextButton.addEventListener('click' , function(){
+    CorrectNextButton.addEventListener('click' , () =>{
         answerCorrectModal.style.display = 'none';       
     });
 
-    incorrectNextButton.addEventListener('click' , function(){
+    incorrectNextButton.addEventListener('click' , () =>{
         answerIncorrectModal.style.display = 'none';
     });
 
     quizCnt++;
-    
+
     // 結果画面
     if(quizCnt == question.length){
-        quiz.textContent = `正解数は${correct}でした！`;
-        ans1.textContent = "";
-        ans2.textContent = "";
-        ans3.textContent = "";
+        questionPage.style.display = 'none'; 
+        resultPage.style.display = 'block'; 
+        resultCorrectCount.textContent = `正解数は${correct}です。`
+            if(correct == 3){
+                yourType.textContent = "あなたは秋田は博士です！"
+            } else if (correct == 2){
+                yourType.textContent = "もう少し！"
+            } else {
+                yourType.textContent = "がんばりましょう！"
+            }
+
+        backButton.addEventListener('click', () => {
+            document.location.reload()
+        });
+
     }else{
         quizSet();
     }
 };
+
+
 
 // 課題
 // 重複しているところをまとめる。foreachを使う。

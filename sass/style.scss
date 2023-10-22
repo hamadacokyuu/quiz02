@@ -51,19 +51,23 @@ P{
   display: block;
 }
 
-.fadeIn {
-  animation: fadein 0.1s;
-}
+// .fadeIn-1 {
+//   animation: fadein 5s;
+// }
 
-@keyframes fadein {
-from { 
-  opacity: 0;
-  animation-timing-function: ease-in-out;
-}
-to   { 
-  opacity: 1;
-  }
-}
+// .fadeIn-2 {
+//   animation: fadein 0.5s;
+// }
+
+// @keyframes fadein {
+// from { 
+//   opacity: 0;
+//   animation-timing-function: ease-in-out;
+// }
+// to   { 
+//   opacity: 1;
+//   }
+// }
   
 .modal{
   position: fixed;
