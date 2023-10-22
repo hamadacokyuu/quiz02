@@ -100,7 +100,7 @@ function answerCheck(ans){
             if(correct == 3){
                 yourType.textContent = "あなたは秋田は博士です！"
             } else if (correct == 2){
-                yourType.textContent = "もう少し！"
+                yourType.textContent = "もう少しです！"
             } else {
                 yourType.textContent = "がんばりましょう！"
             }
